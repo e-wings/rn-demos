@@ -14,7 +14,8 @@ import {
 } from 'react-native';
 
 import Header from './common/component/Header';
-import NewsTitle from './common/component/NewsTitle'
+import NewsTitle from './common/component/NewsTitle';
+import ImportantNews from './common/component/ImportantNews';
 
 class NewsList extends Component {
   render() {
@@ -26,6 +27,9 @@ class NewsList extends Component {
           <NewsTitle title="新闻2"/>
           <NewsTitle title="新闻5"/>
         </View>
+        <ImportantNews>
+
+        </ImportantNews>
       </View>
     );
   }
