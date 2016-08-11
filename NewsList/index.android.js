@@ -8,46 +8,41 @@ import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
+  PixelRatio,
   Text,
   View
 } from 'react-native';
 
+import Header from './common/component/Header';
+import NewsTitle from './common/component/NewsTitle';
+import ImportantNews from './common/component/ImportantNews';
+
 class NewsList extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+      <View style={[styles.container,styles.center]}>
+        <Header />
+        <View style={styles.topNews}>
+          <NewsTitle title="新闻1"/>
+          <NewsTitle title="新闻2"/>
+          <NewsTitle title="新闻5"/>
+        </View>
+        <ImportantNews>
+
+        </ImportantNews>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+  container:{
+    paddingTop:40,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  topNews:{
+    paddingTop:10
+  }
 });
+
 
 AppRegistry.registerComponent('NewsList', () => NewsList);
