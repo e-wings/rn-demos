@@ -16,7 +16,6 @@ export default class NewsTitle extends Component{
 const styles=StyleSheet.create({
   title:{
     fontSize:20,
-    paddingLeft:18,
     paddingTop:7,
   }
 })
