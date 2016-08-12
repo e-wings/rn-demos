@@ -7,8 +7,8 @@
 
 ## 安装方法
 
-'npm install
-react-native run-android'
+```npm install
+react-native run-android```
 
 ## 截图
 ![image](https://raw.githubusercontent.com/e-wings/rn-demos/master/NavigatorDemo/screenshot.png)
