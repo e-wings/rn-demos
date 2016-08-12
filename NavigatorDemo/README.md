@@ -8,11 +8,8 @@
 ## 安装方法
 
 ```npm install
-
 cd NavigatorDemo
-
 git clone https://github.com/e-wings/rn-components.git
-
 react-native run-android```
 
 ## 参考链接
