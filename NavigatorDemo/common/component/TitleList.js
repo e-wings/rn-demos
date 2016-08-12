@@ -21,7 +21,7 @@ export default class TitleList extends Component{
     }
     return(
       <ScrollView>
-        <Text style={styles.title}>标题列表</Text>
+        <Text style={styles.title}>传递参数的跳转</Text>
         {titleArr}
       </ScrollView>
     );
