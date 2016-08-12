@@ -6,9 +6,12 @@ import {
 } from 'react-native';
 
 export default class NewsTitle extends Component{
+  sumText(text){
+    return text+" "+text;
+  }
   render(){
     return(
-      <Text style={styles.title}>{this.props.title}</Text>
+      <Text style={styles.title}>{this.sumText(this.props.title)}</Text>
     )
   }
 }

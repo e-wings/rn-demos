@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 import Header from './common/component/Header';
-import NewsTitle from './common/component/NewsTitle';
+import MyNewsTitle from './MyNewsTitle';
 import ImportantNews from './common/component/ImportantNews';
 
 class NewsList extends Component {
@@ -23,9 +23,9 @@ class NewsList extends Component {
       <View style={[styles.container,styles.center]}>
         <Header />
         <View style={styles.topNews}>
-          <NewsTitle title="新闻1"/>
-          <NewsTitle title="新闻2"/>
-          <NewsTitle title="新闻5"/>
+          <MyNewsTitle title="新闻1"/>
+          <MyNewsTitle title="新闻2"/>
+          <MyNewsTitle title="新闻5"/>
         </View>
         <ImportantNews>
 

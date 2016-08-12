@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 import Header from './common/component/Header';
-import NewsTitle from './common/component/NewsTitle';
+import NewsTitle from './NewsTitle';
 import ImportantNews from './common/component/ImportantNews';
 
 class NewsList extends Component {
@@ -25,7 +25,7 @@ class NewsList extends Component {
       image:null,
     };
   }
-  
+
   render() {
     if(!this.state.title || !this.state.image) {
       var importantNews=[
@@ -49,13 +49,13 @@ class NewsList extends Component {
         </View>
       );
     }
-    
+
     //获取json
     var title = this.state.title;
     var image = this.state.image;
     return this.renderTitle(title, image);
   }
-  
+
    renderTitle(title, image) {
     return (
         <View style={[styles.container,styles.center]}>
@@ -70,7 +70,7 @@ class NewsList extends Component {
         </View>
     );
   }
-  
+
   componentDidMount() {
     fetch('http://ichemtech.com/demo.json')
       .then((response) => response.json())
