@@ -18,29 +18,73 @@ import NewsTitle from './common/component/NewsTitle';
 import ImportantNews from './common/component/ImportantNews';
 
 class NewsList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title:null,
+      image:null,
+    };
+  }
+  
   render() {
-    var importantNews=[
-      "重要新闻1",
-      "重要新闻2",
-      "重要新闻3",
-      "重要新闻4",
-      "重要新闻5",
-    ];
-    return (
-      <View style={[styles.container,styles.center]}>
-        <Header />
-        <View style={styles.topNews}>
-          <NewsTitle title="新闻1"/>
-          <NewsTitle title="新闻2"/>
-          <NewsTitle title="新闻5"/>
-        </View>
-        <ImportantNews newsData={importantNews} style={styles.importantNews}>
+    if(!this.state.title || !this.state.image) {
+      var importantNews=[
+        "原重要新闻1",
+        "原重要新闻2",
+        "原重要新闻3",
+        "原重要新闻4",
+        "原重要新闻5",
+      ];
+      return (
+        <View style={[styles.container,styles.center]}>
+          <Header />
+          <View style={styles.topNews}>
+            <NewsTitle title="新闻1"/>
+            <NewsTitle title="新闻2"/>
+            <NewsTitle title="新闻5"/>
+          </View>
+          <ImportantNews newsData={importantNews} style={styles.importantNews}>
 
-        </ImportantNews>
-      </View>
+          </ImportantNews>
+        </View>
+      );
+    }
+    
+    //获取json
+    var title = this.state.title;
+    var image = this.state.image;
+    return this.renderTitle(title, image);
+  }
+  
+   renderTitle(title, image) {
+    return (
+        <View style={[styles.container,styles.center]}>
+        <Header />
+          <View style={styles.topNews}>
+            <NewsTitle title="新闻1"/>
+            <NewsTitle title="新闻2"/>
+            <NewsTitle title="新闻5"/>
+          </View>
+          <ImportantNews newsData={title} newsImage={image} style={styles.importantNews}>
+          </ImportantNews>
+        </View>
     );
   }
+  
+  componentDidMount() {
+    fetch('http://ichemtech.com/demo.json')
+      .then((response) => response.json())
+      .then((responseData) => {
+        this.setState({
+          title:responseData.title,
+          image:responseData.image,
+        })
+      })
+      .done();
+  }
 }
+
+
 
 const styles = StyleSheet.create({
   container:{
