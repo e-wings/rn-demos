@@ -10,5 +10,8 @@
 ```npm install
 react-native run-android```
 
+## 参考链接
+http://bbs.reactnative.cn/topic/20/%E6%96%B0%E6%89%8B%E7%90%86%E8%A7%A3navigator%E7%9A%84%E6%95%99%E7%A8%8B
+
 ## 截图
 ![image](https://raw.githubusercontent.com/e-wings/rn-demos/master/NavigatorDemo/screenshot.png)
