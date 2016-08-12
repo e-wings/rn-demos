@@ -1,11 +1,11 @@
 import React from 'react';
 import {StyleSheet,Text} from 'react-native'
-import NewsTitle from './common/component/NewsTitle';
+import NewsTitle from './common/rn-components/ui/TitleSingle';
 
 export default class NewsList extends NewsTitle{
   render(){
     return(
-      <Text style={styles.title}>{this.sumText(this.props.title)}</Text>
+      <Text style={styles.title}>{this.props.title}</Text>
     )
   }
 }

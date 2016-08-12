@@ -7,9 +7,9 @@ import {
     StyleSheet,
 } from 'react-native';
 
-import TitleList from './common/component/TitleList';
+import TitleList from './common/rn-components/ui/TitleList';
 import SecondPageComponent from './SecondPageComponent';
-import DetailSimple from './common/component/DetailSimple'
+import DetailSimple from './common/rn-components/ui/DetailSimple'
 
 export default class FirstPageComponent extends React.Component {
     constructor(props) {
@@ -38,7 +38,8 @@ export default class FirstPageComponent extends React.Component {
           //这里把从子组件传递过来的参数加入到navigator中，
           //新打开的组件使用这个参数的方式为：{this.props.data}
           params:{
-            data:data
+            data:data,
+            nextComponent:SecondPageComponent,
           }
         })
       }

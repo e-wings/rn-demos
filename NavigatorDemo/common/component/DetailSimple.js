@@ -5,7 +5,6 @@ import {
   View,
   TouchableOpacity,
 } from 'react-native';
-import SecondPageComponent from '../../SecondPageComponent';
 
 export default class DetailSimple extends Component{
   _toList(){
@@ -15,12 +14,13 @@ export default class DetailSimple extends Component{
     }
   }
 
-  _toSecond(){
+  _toNext(){
     const { navigator } = this.props;
     if(navigator) {
+      alert(this.props.nextComponent);return;
       navigator.push({
-          name: 'SecondPageComponent',
-          component: SecondPageComponent,
+          name: 'NextComponent',
+          component: this.props.nextComponent,
       })
     }
   }
@@ -36,7 +36,7 @@ export default class DetailSimple extends Component{
         <TouchableOpacity onPress={this._toList.bind(this)} style={styles.btnBack}>
           <Text>返回列表页</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this._toSecond.bind(this)} style={styles.btnBack}>
+        <TouchableOpacity onPress={this._toNext.bind(this)} style={styles.btnBack}>
           <Text>跳转到 SecondPageComponent</Text>
         </TouchableOpacity>
       </View>
